@@ -11,12 +11,11 @@ jobs:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
         run: |
           pip install -r requirements.txt
-          python train.py  # generate plot.png
-
+          python train.py 
+          
           echo "# CML Report" >> report.md
           cat metrics.txt >> report.md
-          echo '![](residuals.png "Residuals plot")' >> report.md
-         
+          echo "![](./residuals.png)" >> report.md
           cml comment create report.md
           
           
