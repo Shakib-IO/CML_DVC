@@ -16,6 +16,3 @@ jobs:
           echo "# CML Report" >> report.md
           cat metrics.txt >> report.md
           cml comment create report.md
-          
-          
-          
