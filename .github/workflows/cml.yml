@@ -5,6 +5,7 @@ jobs:
     runs-on: [ubuntu-latest]
     steps:
       - uses: actions/checkout@v3
+      - uses: iterative/setup-cml@v1
       - name: Train model
         env:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
@@ -14,4 +15,4 @@ jobs:
 
           echo "# CML report" >> report.md
           cat metrics.txt >> report.md
-          cml-send-comment report.md
+          cml send-comment report.md
