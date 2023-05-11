@@ -15,5 +15,5 @@ jobs:
 
           echo "# CML Report" >> report.md
           cat metrics.txt >> report.md
-          cml-publish feature_importance.png --md >> report.md
+          cml publish ./feature_importance.png --md >> report.md
           cml comment create report.md
