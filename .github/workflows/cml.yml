@@ -15,5 +15,5 @@ jobs:
 
           echo "# CML Report" >> report.md
           cat metrics.txt >> report.md
-          "![inline](./residuals.png)" >> report.md
+          "![inline](residuals.png)" >> report.md
           cml comment create report.md
