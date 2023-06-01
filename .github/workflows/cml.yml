@@ -1,23 +1,23 @@
-name: CML
-on: [push]
-jobs:
-  run:
-    runs-on: [ubuntu-latest]
-    steps:
-      - uses: iterative/setup-cml@v1
-      - uses: actions/checkout@v3
-      - name: Train model
-        env:
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          pip install -r requirements.txt
-          python train.py  # generate plot.png
+# name: CML
+# on: [push]
+# jobs:
+#   run:
+#     runs-on: [ubuntu-latest]
+#     steps:
+#       - uses: iterative/setup-cml@v1
+#       - uses: actions/checkout@v3
+#       - name: Train model
+#         env:
+#           repo_token: ${{ secrets.GITHUB_TOKEN }}
+#         run: |
+#           pip install -r requirements.txt
+#           python train.py  # generate plot.png
 
-          echo "# CML Report" >> report.md
-          cat metrics.txt >> report.md
-          echo '![](residuals.png "Residuals plot")' >> report.md
+#           echo "# CML Report" >> report.md
+#           cat metrics.txt >> report.md
+#           echo '![](residuals.png "Residuals plot")' >> report.md
          
-          cml comment create report.md
+#           cml comment create report.md
           
           
           
